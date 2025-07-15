@@ -1,223 +1,41 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <style>
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: "ProductSans-Light", "Microsoft-YaHei-Light", serif;
-      line-height: 1.6;
-      
-      
-      padding: 2rem;
-      margin: 0 auto;
-    }
-    
-   
-    @font-face {
-      font-family: "ProductSans-Black";
-      src: url("fonts/ProductSans-Regular.ttf");
-    }
-    
-    @font-face {
-      font-family: "Microsoft-YaHei-Bold";
-      src: url("fonts/Microsoft-YaHei-Bold.ttc");
-    }
-    
-    @font-face {
-      font-family: "ProductSans-Light";
-      src: url("fonts/ProductSans-Light.ttf");
-    }
-    
-    @font-face {
-      font-family: "Microsoft-YaHei-Light";
-      src: url("fonts/Microsoft-YaHei-Light.ttc");
-    }
-    
-    /* 标题样式 */
-    h1 {
-      font-family: "ProductSans-Black", "Microsoft-YaHei-Bold", serif;
-      font-size: 3.5rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      
-      transition: all 0.3s ease;
-    }
-    
-    h1:hover {
-      transform: translateY(-2px);
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    h2 {
-      font-family: "ProductSans-Light", "Microsoft-YaHei-Light", serif;
-      font-size: 2rem;
-      line-height: 1.2;
-      margin-bottom: 2rem;
-      
-      border-left: 2rem solid #3498db;
-      padding-left: 1rem;
-    }
-    
 
-    .main-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      background-color: white;
-      padding: 2rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-    
-    .main-content:hover {
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    .image-container {
-      flex: 1;
-      min-width: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .img-01 {
-      max-width: 100%;
-      max-height: 400px;
-      object-fit: contain;
-     
-      transition: all 0.3s ease;
-    }
-    
-    .img-01:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-    
-    .description-container {
-      flex: 2;
-      min-width: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    
-    .description-title {
-      font-family: "ProductSans-Black", "Microsoft-YaHei-Bold", serif;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #2c3e50;
-    }
-    
-    .description-text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      color: #555;
-    }
-    
-    .metadata {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.9rem;
-      color: #7f8c8d;
-    }
-    
-    .metadata-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    /* 页脚样式 */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid #eee;
-      color: #7f8c8d;
-      font-size: 0.9rem;
-    }
-    
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .footer-link {
-      color: #3498db;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .footer-link:hover {
-      color: #2980b9;
-      text-decoration: underline;
-    }
-    
-    .copyright {
-      margin-top: 0.5rem;
-    }
-    
-    /* 响应式设计 */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
-      }
-      
-      .main-content {
-        flex-direction: column;
-      }
-    }
-  </style>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>清汀琉璃的博客</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
-  <h1>Tsingtinglyuli's blog</h1>
-  <h2>清汀琉璃的博客</h2>
-  
-  
-    <div class="main-content">
-      <img class="img-01" src="resources\蒂蒂.png" alt="蒂蒂的插画作品">
-    
-      <h3 class="description-title">蒂蒂的世界</h3>
-      <p class="description-text">
-        这幅作品描绘了一个奇幻的精灵世界，展现了作者对自然与幻想的独特理解。
-        柔和的色彩搭配精致的细节，创造出一个既神秘又迷人的场景。
-        画中的精灵蒂蒂正与自然对话，象征着人与自然和谐共存的美好愿景。
-      </p>
-      <div class="metadata">
-        <div class="metadata-item">
-          <span class="material-icons-outlined">date_range</span>
-          <span>2023年10月15日</span>
-        </div>
-        <div class="metadata-item">
-          <span class="material-icons-outlined">folder</span>
-          <span>插画作品</span>
-        </div>
-        <div class="metadata-item">
-          <span class="material-icons-outlined">favorite</span>
-          <span>328 喜欢</span>
-        </div>
-      </div>
-    </div>
+ <div class="title-container">
+    <h1>Tsingtinglyuli's blog</h1>
+    <h2>清汀琉璃的博客</h2>
   </div>
   
+  <section id="section1">
+    <div class="main-content">
+      <img class="img-01" src="resources\蒂蒂.png" alt="蒂蒂的插画作品">
+      <div class="text-content">
+        <h3>有时候，也会憧憬着</h3>
+      </div>
+
+    </div>
+  </section>
+  <section id="section2">
+    第二部分
+    <p> 这是第二部分的内容</p>
+  </section>
+   <section id="section3">
+    
+    <p> 这是第3部分的内容</p>
+  </section>
+
+
+
   <footer>
     <div class="footer-links">
       <a href="#" class="footer-link">关于我</a>
@@ -230,5 +48,21 @@
     </div>
   </footer>
 </body>
+<script>
+  document.addEventListener("wheel",function(event) {
+    var delta = event.deltaY;
+    var sections = document.querySelectorAll("section");
+    var currentSection = document.querySelector("section:active") || sections[0];
+    var currentIndex = Array.from(sections).indexOf(currentSection);
+    if (delta > 0 && currentIndex < sections.length - 1) {
+      currentSection.classList.remove("active");
+      sections[currentIndex +1].classList.add("active");
+    } else if (delta < 0 && currentIndex > 0) {
+      currentSection.classList.remove("active");
+      sections[currentIndex - 1].classList.add("active");
+    }
+  });
+
+</script>
+
 </html>
-    
